@@ -41,11 +41,11 @@ def remap( full_dir, sub_dir, py140=None ):
 
         map_to_refined.sort()
 
-        f.write('old new\n')
+        f.write('new to old\n')
 
         for old, new in map_to_refined:
 
-            f.write('{}\t{}\n'.format(old, new))
+            f.write('{}\t{}\n'.format(new, old))
 
 def find_mapping( node_map, node ):
 

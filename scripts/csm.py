@@ -174,10 +174,9 @@ class Domain(object,):
         py140 = self.openInputFile("py.140")
         py140.readline()
         self.n2o = [None]*(self.np+1)
-        for n in range(self.np):
-            sline = py140.readline().split()
-            new = int(sline[0])
-            old = int(sline[1])
+        for line in py140:
+            new = int(line.split()[0])
+            old = int(line.split()[1])
             self.n2o[new] = old
 
     def openFort065(self):
