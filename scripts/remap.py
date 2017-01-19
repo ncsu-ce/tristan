@@ -95,7 +95,7 @@ def print_usage( usage, depth=1 ):
 
 if __name__ == "__main__":
 
-    if sys.argv[1] == '-r':
+    if len(sys.argv) >= 2 and sys.argv[1] == '-r':
 
         numargs = len(sys.argv) - 2
 
@@ -113,7 +113,14 @@ if __name__ == "__main__":
             'Usage:',
             'Recreate py.140 (with only boundary nodes) for a subdomain',
             [
-                'python remap.py -r [full_dir] [sub_dir]'
+                'Overwrite existing py.140 in subdomain directory:',
+                [
+                    'python remap.py -r [full_dir] [sub_dir]'
+                ],
+                'Specify py.140 to write to:',
+                [
+                    'python remap.py -r [full_dir] [sub_dir] [py.140]'
+                ]
             ]
         ]
 
