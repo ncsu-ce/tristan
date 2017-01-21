@@ -15,7 +15,7 @@ def remap( full_dir, sub_dir, py140=None ):
 
     print '\t Creating new nodal map'
     full_map = map_nodal_location(full.nodes)
-    sub_boundaries = set( sub.nbdv + sub.nbvv )
+    sub_boundaries = set( sub.nbdv )
     sub_nodes = [(i, sub.nodes[i]) for i in sub_boundaries]
 
     map_to_refined = []
@@ -38,8 +38,6 @@ def remap( full_dir, sub_dir, py140=None ):
         outfile = py140
 
     with open( outfile, 'w' ) as f:
-
-        map_to_refined.sort()
 
         f.write('new to old\n')
 
